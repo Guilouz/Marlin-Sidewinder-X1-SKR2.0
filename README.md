@@ -9,6 +9,8 @@ Si vous aimez mon travail, n'hésitez pas à me soutenir en me payant une 🍺 o
 <img align="left" width=600 src="https://user-images.githubusercontent.com/12702322/116473468-7b693880-a877-11eb-8783-5eccf0b5fbc0.jpg" />
 <img align="right" width=175 src="buildroot/share/pixmaps/logo/marlin-250.png" />
 
+<br /><br /><br /><br /><br /><br />
+
 **Firmware Marlin 2.0.x bugfix configuré pour Artillery Sidewinder X1 avec carte mère BigTreeTech SRK 2.0.**
 
 Le firmware pour écran BigTreeTech TFT43 3.0 est disponible [ici](https://github.com/Guilouz/BTT-TFT43-Sidewinder-X1).

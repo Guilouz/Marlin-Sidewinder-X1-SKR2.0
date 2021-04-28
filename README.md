@@ -15,7 +15,7 @@ Si vous aimez mon travail, n'hésitez pas à me soutenir en me payant une 🍺 o
 
 Le firmware pour écran BigTreeTech TFT43 3.0 est disponible [ici](https://github.com/Guilouz/BTT-TFT43-Sidewinder-X1).
 
-<br /><br /><br /><br />
+<br /><br /><br />
 
 ## Principales fonctionnalités configurées :
 

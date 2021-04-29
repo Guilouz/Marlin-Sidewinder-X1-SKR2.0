@@ -30,6 +30,7 @@ Le firmware pour écran BigTreeTech TFT43 3.0 est disponible [ici](https://githu
 - Support S-Curve Acceleration & Junction Deviation
 - Support G34 - Z Steppers Auto-Alignment
 - Support G26 - Mesh Validation Pattern
+- Support Transfert fichier binaire
 - Optimisation du buffer pour Octoprint
 - Marlin en français
 

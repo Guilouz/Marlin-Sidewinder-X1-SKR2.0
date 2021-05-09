@@ -116,6 +116,7 @@ namespace Language_fr {
   PROGMEM Language_Str MSG_SPINDLE_POWER                   = _UxGT("Spindle Pwr");
   PROGMEM Language_Str MSG_LASER_TOGGLE                    = _UxGT("Basculer Laser");
   PROGMEM Language_Str MSG_LASER_EVAC_TOGGLE               = _UxGT("Basculer Ventilateur");
+  PROGMEM Language_Str MSG_LASER_ASSIST_TOGGLE             = _UxGT("Assistance Air");
   PROGMEM Language_Str MSG_LASER_PULSE_MS                  = _UxGT("Test Pulse ms");
   PROGMEM Language_Str MSG_LASER_FIRE_PULSE                = _UxGT("Fire Pulse");
   PROGMEM Language_Str MSG_FLOWMETER_FAULT                 = _UxGT("Erreur de débit du liquide de refroidissement");
@@ -163,6 +164,7 @@ namespace Language_fr {
   PROGMEM Language_Str MSG_UBL_LEVEL_BED                   = _UxGT("Unified Bed Leveling");
   PROGMEM Language_Str MSG_LCD_TILTING_MESH                = _UxGT("Point d'inclinaison");
   PROGMEM Language_Str MSG_UBL_MANUAL_MESH                 = _UxGT("Maillage manuel");
+  PROGMEM Language_Str MSG_UBL_MESH_WIZARD                 = _UxGT("Assistant Mesh UBL");
   PROGMEM Language_Str MSG_UBL_BC_INSERT                   = _UxGT("Placer la cale & Mesurer");
   PROGMEM Language_Str MSG_UBL_BC_INSERT2                  = _UxGT("Mesurer");
   PROGMEM Language_Str MSG_UBL_BC_REMOVE                   = _UxGT("Retirer & Mesurer le plateau");

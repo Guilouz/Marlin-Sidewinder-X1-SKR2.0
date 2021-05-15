@@ -19,11 +19,9 @@ Si vous aimez mon travail, n'hésitez pas à me soutenir en me payant une 🍺 o
 
 Le firmware pour écran BigTreeTech TFT43 3.0 est disponible [ici](https://github.com/Guilouz/BTT-TFT43-Sidewinder-X1).
 
-<br /><br />
+<br />
 
 Le firmware pour carte mère BigTreeTech SKR 1.4 Turbo est disponible [ici](https://github.com/Guilouz/Marlin-Sidewinder-X1-SKR1.4-Turbo/).
-
-<br />
 
 ## Principales fonctionnalités configurées :
 

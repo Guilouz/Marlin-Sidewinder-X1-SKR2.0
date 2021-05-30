@@ -706,6 +706,6 @@ namespace Language_fr {
   PROGMEM Language_Str MSG_BOTTOM_RIGHT                    = _UxGT("Coin bas droit");
   PROGMEM Language_Str MSG_CALIBRATION_COMPLETED           = _UxGT("Calibration terminée");
   PROGMEM Language_Str MSG_CALIBRATION_FAILED              = _UxGT("Échec de l'étalonnage");
-  
+
   PROGMEM Language_Str MSG_DRIVER_BACKWARD                 = _UxGT(" driver inversé");
 }

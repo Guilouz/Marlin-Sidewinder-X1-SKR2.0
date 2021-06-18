@@ -66,10 +66,13 @@ namespace Language_fr {
   PROGMEM Language_Str MSG_DISABLE_STEPPERS                = _UxGT("Arrêter moteurs");
   PROGMEM Language_Str MSG_DEBUG_MENU                      = _UxGT("Menu debug");
   PROGMEM Language_Str MSG_PROGRESS_BAR_TEST               = _UxGT("Test barre progress.");
-  PROGMEM Language_Str MSG_AUTO_HOME                       = _UxGT("Origine auto");
-  PROGMEM Language_Str MSG_AUTO_HOME_X                     = _UxGT("Origine X auto");
-  PROGMEM Language_Str MSG_AUTO_HOME_Y                     = _UxGT("Origine Y auto");
-  PROGMEM Language_Str MSG_AUTO_HOME_Z                     = _UxGT("Origine Z auto");
+  PROGMEM Language_Str MSG_AUTO_HOME                       = _UxGT("Home auto");
+  PROGMEM Language_Str MSG_AUTO_HOME_X                     = _UxGT("Home X auto");
+  PROGMEM Language_Str MSG_AUTO_HOME_Y                     = _UxGT("Home Y auto");
+  PROGMEM Language_Str MSG_AUTO_HOME_Z                     = _UxGT("Home Z auto");
+  PROGMEM Language_Str MSG_AUTO_HOME_I                     = _UxGT("Home ") LCD_STR_I;
+  PROGMEM Language_Str MSG_AUTO_HOME_J                     = _UxGT("Home ") LCD_STR_J;
+  PROGMEM Language_Str MSG_AUTO_HOME_K                     = _UxGT("Home ") LCD_STR_K;
   PROGMEM Language_Str MSG_AUTO_Z_ALIGN                    = _UxGT("Z-Align");
   PROGMEM Language_Str MSG_ITERATION                       = _UxGT("Itération G34: %i");
   PROGMEM Language_Str MSG_DECREASING_ACCURACY             = _UxGT("Précision décroissante!");
@@ -83,6 +86,9 @@ namespace Language_fr {
   PROGMEM Language_Str MSG_HOME_OFFSET_X                   = _UxGT("Home Offset X");
   PROGMEM Language_Str MSG_HOME_OFFSET_Y                   = _UxGT("Home Offset Y");
   PROGMEM Language_Str MSG_HOME_OFFSET_Z                   = _UxGT("Home Offset Z");
+  PROGMEM Language_Str MSG_HOME_OFFSET_I                   = _UxGT("Home Offset ") LCD_STR_I;
+  PROGMEM Language_Str MSG_HOME_OFFSET_J                   = _UxGT("Home Offset ") LCD_STR_J;
+  PROGMEM Language_Str MSG_HOME_OFFSET_K                   = _UxGT("Home Offset ") LCD_STR_K;
   PROGMEM Language_Str MSG_HOME_OFFSETS_APPLIED            = _UxGT("Décalages appliqués");
   PROGMEM Language_Str MSG_SET_ORIGIN                      = _UxGT("Régler origine");
   PROGMEM Language_Str MSG_ASSISTED_TRAMMING               = _UxGT("Tramage assisté");
@@ -263,6 +269,9 @@ namespace Language_fr {
   PROGMEM Language_Str MSG_MOVE_X                          = _UxGT("Déplacer X");
   PROGMEM Language_Str MSG_MOVE_Y                          = _UxGT("Déplacer Y");
   PROGMEM Language_Str MSG_MOVE_Z                          = _UxGT("Déplacer Z");
+  PROGMEM Language_Str MSG_MOVE_I                          = _UxGT("Déplacer ") LCD_STR_I;
+  PROGMEM Language_Str MSG_MOVE_J                          = _UxGT("Déplacer ") LCD_STR_J;
+  PROGMEM Language_Str MSG_MOVE_K                          = _UxGT("Déplacer ") LCD_STR_K;
   PROGMEM Language_Str MSG_MOVE_E                          = _UxGT("Extruder");
   PROGMEM Language_Str MSG_MOVE_EN                         = _UxGT("Extruder *");
   PROGMEM Language_Str MSG_HOTEND_TOO_COLD                 = _UxGT("Buse trop froide");
@@ -327,12 +336,18 @@ namespace Language_fr {
   PROGMEM Language_Str MSG_VA_JERK                         = _UxGT("V") LCD_STR_A _UxGT("-Jerk");
   PROGMEM Language_Str MSG_VB_JERK                         = _UxGT("V") LCD_STR_B _UxGT("-Jerk");
   PROGMEM Language_Str MSG_VC_JERK                         = _UxGT("V") LCD_STR_C _UxGT("-Jerk");
+  PROGMEM Language_Str MSG_VI_JERK                         = _UxGT("V") LCD_STR_I _UxGT("-Jerk");
+  PROGMEM Language_Str MSG_VJ_JERK                         = _UxGT("V") LCD_STR_J _UxGT("-Jerk");
+  PROGMEM Language_Str MSG_VK_JERK                         = _UxGT("V") LCD_STR_K _UxGT("-Jerk");
   PROGMEM Language_Str MSG_VE_JERK                         = _UxGT("Ve-Jerk");
   PROGMEM Language_Str MSG_JUNCTION_DEVIATION              = _UxGT("Junction Dev");
   PROGMEM Language_Str MSG_VELOCITY                        = _UxGT("Vélocité");
   PROGMEM Language_Str MSG_VMAX_A                          = _UxGT("Vmax ") LCD_STR_A;
   PROGMEM Language_Str MSG_VMAX_B                          = _UxGT("Vmax ") LCD_STR_B;
   PROGMEM Language_Str MSG_VMAX_C                          = _UxGT("Vmax ") LCD_STR_C;
+  PROGMEM Language_Str MSG_VMAX_I                          = _UxGT("Vmax ") LCD_STR_I;
+  PROGMEM Language_Str MSG_VMAX_J                          = _UxGT("Vmax ") LCD_STR_J;
+  PROGMEM Language_Str MSG_VMAX_K                          = _UxGT("Vmax ") LCD_STR_K;
   PROGMEM Language_Str MSG_VMAX_E                          = _UxGT("Vmax ") LCD_STR_E;
   PROGMEM Language_Str MSG_VMAX_EN                         = _UxGT("Vmax *");
   PROGMEM Language_Str MSG_VMIN                            = _UxGT("Vmin");
@@ -341,6 +356,9 @@ namespace Language_fr {
   PROGMEM Language_Str MSG_AMAX_A                          = _UxGT("Amax ") LCD_STR_A;
   PROGMEM Language_Str MSG_AMAX_B                          = _UxGT("Amax ") LCD_STR_B;
   PROGMEM Language_Str MSG_AMAX_C                          = _UxGT("Amax ") LCD_STR_C;
+  PROGMEM Language_Str MSG_AMAX_I                          = _UxGT("Amax ") LCD_STR_I;
+  PROGMEM Language_Str MSG_AMAX_J                          = _UxGT("Amax ") LCD_STR_J;
+  PROGMEM Language_Str MSG_AMAX_K                          = _UxGT("Amax ") LCD_STR_K;
   PROGMEM Language_Str MSG_AMAX_E                          = _UxGT("Amax ") LCD_STR_E;
   PROGMEM Language_Str MSG_AMAX_EN                         = _UxGT("Amax *");
   PROGMEM Language_Str MSG_A_RETRACT                       = _UxGT("Acc.rétraction");
@@ -351,6 +369,9 @@ namespace Language_fr {
   PROGMEM Language_Str MSG_A_STEPS                         = LCD_STR_A _UxGT(" pas/mm");
   PROGMEM Language_Str MSG_B_STEPS                         = LCD_STR_B _UxGT(" pas/mm");
   PROGMEM Language_Str MSG_C_STEPS                         = LCD_STR_C _UxGT(" pas/mm");
+  PROGMEM Language_Str MSG_I_STEPS                         = LCD_STR_I _UxGT(" Steps/mm");
+  PROGMEM Language_Str MSG_J_STEPS                         = LCD_STR_J _UxGT(" Steps/mm");
+  PROGMEM Language_Str MSG_K_STEPS                         = LCD_STR_K _UxGT(" Steps/mm");
   PROGMEM Language_Str MSG_E_STEPS                         = _UxGT("E pas/mm");
   PROGMEM Language_Str MSG_EN_STEPS                        = _UxGT("* pas/mm");
   PROGMEM Language_Str MSG_TEMPERATURE                     = _UxGT("Température");
@@ -484,6 +505,9 @@ namespace Language_fr {
   PROGMEM Language_Str MSG_BABYSTEP_X                      = _UxGT("Babystep X");
   PROGMEM Language_Str MSG_BABYSTEP_Y                      = _UxGT("Babystep Y");
   PROGMEM Language_Str MSG_BABYSTEP_Z                      = _UxGT("Babystep Z");
+  PROGMEM Language_Str MSG_BABYSTEP_I                      = _UxGT("Babystep ") LCD_STR_I;
+  PROGMEM Language_Str MSG_BABYSTEP_J                      = _UxGT("Babystep ") LCD_STR_J;
+  PROGMEM Language_Str MSG_BABYSTEP_K                      = _UxGT("Babystep ") LCD_STR_K;
   PROGMEM Language_Str MSG_BABYSTEP_TOTAL                  = _UxGT("Total");
   PROGMEM Language_Str MSG_ENDSTOP_ABORT                   = _UxGT("Butée abandonnée");
   PROGMEM Language_Str MSG_HEATING_FAILED_LCD              = _UxGT("Erreur de chauffe");
@@ -564,6 +588,9 @@ namespace Language_fr {
   PROGMEM Language_Str MSG_DAC_PERCENT_X                   = _UxGT("X Driver %");
   PROGMEM Language_Str MSG_DAC_PERCENT_Y                   = _UxGT("Y Driver %");
   PROGMEM Language_Str MSG_DAC_PERCENT_Z                   = _UxGT("Z Driver %");
+  PROGMEM Language_Str MSG_DAC_PERCENT_I                   = _UxGT("I Driver %");
+  PROGMEM Language_Str MSG_DAC_PERCENT_J                   = _UxGT("J Driver %");
+  PROGMEM Language_Str MSG_DAC_PERCENT_K                   = _UxGT("K Driver %");
   PROGMEM Language_Str MSG_DAC_PERCENT_E                   = _UxGT("E Driver %");
   PROGMEM Language_Str MSG_ERROR_TMC                       = _UxGT("ERREUR CONNEXION TMC");
   PROGMEM Language_Str MSG_DAC_EEPROM_WRITE                = _UxGT("DAC EEPROM sauv.");
@@ -681,6 +708,9 @@ namespace Language_fr {
   PROGMEM Language_Str MSG_BACKLASH_A                      = LCD_STR_A;
   PROGMEM Language_Str MSG_BACKLASH_B                      = LCD_STR_B;
   PROGMEM Language_Str MSG_BACKLASH_C                      = LCD_STR_C;
+  PROGMEM Language_Str MSG_BACKLASH_I                      = LCD_STR_I;
+  PROGMEM Language_Str MSG_BACKLASH_J                      = LCD_STR_J;
+  PROGMEM Language_Str MSG_BACKLASH_K                      = LCD_STR_K;
   PROGMEM Language_Str MSG_BACKLASH_CORRECTION             = _UxGT("Correction");
   PROGMEM Language_Str MSG_BACKLASH_SMOOTHING              = _UxGT("Lissage");
 
@@ -708,4 +738,7 @@ namespace Language_fr {
   PROGMEM Language_Str MSG_CALIBRATION_FAILED              = _UxGT("Échec de l'étalonnage");
 
   PROGMEM Language_Str MSG_DRIVER_BACKWARD                 = _UxGT(" driver inversé");
+
+  PROGMEM Language_Str MSG_SD_CARD                         = _UxGT("Carte SD");
+  PROGMEM Language_Str MSG_USB_DISK                        = _UxGT("Disque USB");
 }

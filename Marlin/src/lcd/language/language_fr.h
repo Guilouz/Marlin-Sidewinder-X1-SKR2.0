@@ -279,9 +279,11 @@ namespace Language_fr {
   PROGMEM Language_Str MSG_MOVE_01MM                       = _UxGT("Déplacer 0.1mm");
   PROGMEM Language_Str MSG_MOVE_1MM                        = _UxGT("Déplacer 1mm");
   PROGMEM Language_Str MSG_MOVE_10MM                       = _UxGT("Déplacer 10mm");
+  PROGMEM Language_Str MSG_MOVE_100MM                      = _UxGT("Déplacer 100mm");
   PROGMEM Language_Str MSG_MOVE_0001IN                     = _UxGT("Déplacer 0.001in");
   PROGMEM Language_Str MSG_MOVE_001IN                      = _UxGT("Déplacer 0.01in");
   PROGMEM Language_Str MSG_MOVE_01IN                       = _UxGT("Déplacer 0.1in");
+  PROGMEM Language_Str MSG_MOVE_1IN                        = _UxGT("Déplacer 1.0in");
   PROGMEM Language_Str MSG_SPEED                           = _UxGT("Vitesse");
   PROGMEM Language_Str MSG_BED_Z                           = _UxGT("Plateau Z");
   PROGMEM Language_Str MSG_NOZZLE                          = _UxGT("Buse");

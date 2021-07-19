@@ -125,16 +125,33 @@
   #define PROBE_BETA                   3950    // Beta value
 #endif
 
+#if TEMP_SENSOR_BOARD == 1000
+  #define BOARD_PULLUP_RESISTOR_OHMS   4700    // Pullup resistor
+  #define BOARD_RESISTANCE_25C_OHMS    100000  // Resistance at 25C
+  #define BOARD_BETA                   3950    // Beta value
+#endif
+
 #if TEMP_SENSOR_REDUNDANT == 1000
   #define REDUNDANT_PULLUP_RESISTOR_OHMS   4700    // Pullup resistor
   #define REDUNDANT_RESISTANCE_25C_OHMS    100000  // Resistance at 25C
   #define REDUNDANT_BETA                   3950    // Beta value
 #endif
 
-//
-// Hephestos 2 24V heated bed upgrade kit.
-// https://store.bq.com/en/heated-bed-kit-hephestos2
-//
+/**
+ * Configuration options for MAX Thermocouples (-2, -3, -5).
+ *   FORCE_HW_SPI:   Ignore SCK/MOSI/MISO pins and just use the CS pin & default SPI bus.
+ *   MAX31865_WIRES: Set the number of wires for the probe connected to a MAX31865 board, 2-4. Default: 2
+ *   MAX31865_50HZ:  Enable 50Hz filter instead of the default 60Hz.
+ */
+//#define TEMP_SENSOR_FORCE_HW_SPI
+//#define MAX31865_SENSOR_WIRES_0 2
+//#define MAX31865_SENSOR_WIRES_1 2
+//#define MAX31865_50HZ_FILTER
+
+/**
+ * Hephestos 2 24V heated bed upgrade kit.
+ * https://store.bq.com/en/heated-bed-kit-hephestos2
+ */
 //#define HEPHESTOS2_HEATED_BED_KIT
 #if ENABLED(HEPHESTOS2_HEATED_BED_KIT)
   #undef TEMP_SENSOR_BED
@@ -210,6 +227,18 @@
   #if ENABLED(COOLER_FAN)
     #define COOLER_FAN_BASE      100  // Base Cooler fan PWM (0-255); turns on when Cooler temperature is above the target
     #define COOLER_FAN_FACTOR     25  // PWM increase per °C above target
+  #endif
+#endif
+
+//
+// Motherboard Sensor options
+//
+#if TEMP_SENSOR_BOARD
+  #define THERMAL_PROTECTION_BOARD   // Halt the printer if the board sensor leaves the temp range below.
+  #define BOARD_MINTEMP           8  // (°C)
+  #define BOARD_MAXTEMP          70  // (°C)
+  #ifndef TEMP_BOARD_PIN
+    //#define TEMP_BOARD_PIN -1      // Board temp sensor pin, if not set in pins file.
   #endif
 #endif
 
@@ -467,18 +496,22 @@
  * The fan turns on automatically whenever any driver is enabled and turns
  * off (or reduces to idle speed) shortly after drivers are turned off.
  */
-//#define USE_CONTROLLER_FAN
+#define USE_CONTROLLER_FAN
 #if ENABLED(USE_CONTROLLER_FAN)
-  //#define CONTROLLER_FAN_PIN -1        // Set a custom pin for the controller fan
-  //#define CONTROLLER_FAN_USE_Z_ONLY    // With this option only the Z axis is considered
-  //#define CONTROLLER_FAN_IGNORE_Z      // Ignore Z stepper. Useful when stepper timeout is disabled.
-  #define CONTROLLERFAN_SPEED_MIN      0 // (0-255) Minimum speed. (If set below this value the fan is turned off.)
-  #define CONTROLLERFAN_SPEED_ACTIVE 255 // (0-255) Active speed, used when any motor is enabled
-  #define CONTROLLERFAN_SPEED_IDLE     0 // (0-255) Idle speed, used when motors are disabled
-  #define CONTROLLERFAN_IDLE_TIME     60 // (seconds) Extra time to keep the fan running after disabling motors
-  //#define CONTROLLER_FAN_EDITABLE      // Enable M710 configurable settings
+  #define CONTROLLER_FAN_PIN PB5           // Set a custom pin for the controller fan
+  //#define CONTROLLER_FAN_USE_Z_ONLY       // With this option only the Z axis is considered
+  //#define CONTROLLER_FAN_IGNORE_Z         // Ignore Z stepper. Useful when stepper timeout is disabled.
+  #define CONTROLLERFAN_SPEED_MIN         0 // (0-255) Minimum speed. (If set below this value the fan is turned off.)
+  #define CONTROLLERFAN_SPEED_ACTIVE    255 // (0-255) Active speed, used when any motor is enabled
+  #define CONTROLLERFAN_SPEED_IDLE        128 // (0-255) Idle speed, used when motors are disabled
+  #define CONTROLLERFAN_IDLE_TIME        120 // (seconds) Extra time to keep the fan running after disabling motors
+
+  // Use TEMP_SENSOR_BOARD as a trigger for enabling the controller fan
+  //#define CONTROLLER_FAN_MIN_BOARD_TEMP 40  // (°C) Turn on the fan if the board reaches this temperature
+
+  //#define CONTROLLER_FAN_EDITABLE         // Enable M710 configurable settings
   #if ENABLED(CONTROLLER_FAN_EDITABLE)
-    #define CONTROLLER_FAN_MENU          // Enable the Controller Fan submenu
+    #define CONTROLLER_FAN_MENU             // Enable the Controller Fan submenu
   #endif
 #endif
 
@@ -1454,7 +1487,7 @@
    *
    * [1] On AVR an interrupt-capable pin is best for UHS3 compatibility.
    */
-  #define USB_FLASH_DRIVE_SUPPORT
+  //#define USB_FLASH_DRIVE_SUPPORT
   #if ENABLED(USB_FLASH_DRIVE_SUPPORT)
     /**
      * USB Host Shield Library
@@ -1472,7 +1505,7 @@
     /**
      * Native USB Host supported by some boards (USB OTG)
      */
-    #define USE_OTG_USB_HOST
+    //#define USE_OTG_USB_HOST
 
     #if DISABLED(USE_OTG_USB_HOST)
       #define USB_CS_PIN    SDSS
@@ -1514,7 +1547,7 @@
   //#define NO_SD_DETECT
 
   // Multiple volume support - EXPERIMENTAL.
-  #define MULTI_VOLUME
+  //#define MULTI_VOLUME
   #if ENABLED(MULTI_VOLUME)
     #define VOLUME_SD_ONBOARD
     #define VOLUME_USB_FLASH_DRIVE
@@ -3795,7 +3828,7 @@
  *
  * Implement M486 to allow Marlin to skip objects
  */
-#define CANCEL_OBJECTS
+//#define CANCEL_OBJECTS
 #if ENABLED(CANCEL_OBJECTS)
   #define CANCEL_OBJECTS_REPORTING // Emit the current object as a status message
 #endif

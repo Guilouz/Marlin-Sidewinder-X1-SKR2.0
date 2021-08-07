@@ -15,7 +15,7 @@ Si vous aimez mon travail, n'hésitez pas à me soutenir en me payant une 🍺 o
 
 <br /><br /><br /><br /><br /><br /><br /><br />
 
-**Firmware Marlin 2.0.9.1 bugfix configuré pour Artillery Sidewinder X1 avec carte mère BigTreeTech SRK 2.0 Rev B.**
+**Firmware Marlin 2.0.9.1 bugfix configuré pour Artillery Sidewinder X1 avec carte mère BigTreeTech SRK 2.0 Rev. B.**
 
 Le firmware pour écran BigTreeTech TFT43 3.0 est disponible [ici](https://github.com/Guilouz/BTT-TFT43-Sidewinder-X1).
 
@@ -25,23 +25,23 @@ Le firmware pour carte mère BigTreeTech SKR 1.4 Turbo est disponible [ici](http
 
 ## Principales fonctionnalités configurées :
 
-- Support carte mère BigTreeTech SKR 2.0 Rev B
+- Support carte mère BigTreeTech SKR 2.0 Rev. B
 - Support drivers TMC2209/TMC2226 UART
 - Support écrans BigTreeTech
-- Support BLTouch (High Speed Mode) & Bed Leveling Bilinear
+- Support Bed Leveling Bilinear 5 x 5 points
+- Support BLTouch (High Speed Mode)
 - Support M600 & Nozzle Park / Advanced Pause
+- Support Babystepping
 - Support Neopixels
 - Support EEPROM
 - Support PID Buse & Plateau
+- Support protection thermique contre l'emballement
 - Support S-Curve Acceleration & Junction Deviation
 - Support G34 - Z Steppers Auto-Alignment
 - Support G26 - Mesh Validation Pattern
-- Support BINARY_FILE_TRANSFER (transfert du fichier firmware à distance)
+- Support du transfert de fichier binaire (transfert du fichier firmware à distance via Octoprint)
+- Support de l'extinction de la chauffe après 15 minutes d'inactivité de la hotend
+- Activation du ventilateur de la hotend uniquement quand la chauffe dépasse 50°C
+- Support des commandes d'action de l'hôte
 - Optimisation du buffer pour Octoprint
 - Marlin en français
-
-## License
-
-Marlin is published under the [GPL license](/LICENSE) because we believe in open development. The GPL comes with both rights and obligations. Whether you use Marlin firmware as the driver for your open or closed-source product, you must keep Marlin open, and you must provide your compatible Marlin source code to end users upon request. The most straightforward way to comply with the Marlin license is to make a fork of Marlin on Github, perform your modifications, and direct users to your modified fork.
-
-While we can't prevent the use of this code in products (3D printers, CNC, etc.) that are closed source or crippled by a patent, we would prefer that you choose another firmware or, better yet, make your own.

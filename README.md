@@ -45,3 +45,16 @@ Le firmware pour carte mère BigTreeTech SKR 1.4 Turbo est disponible [ici](http
 - Support des commandes d'action de l'hôte
 - Optimisation du buffer pour Octoprint
 - Marlin en français
+
+## Procédure d'installation :
+
+- Effectuez un reset EEPROM avant flash du nouveau firmware (commande M502 suivi de la commande M500 ou via l'écran TFT).
+- Copiez le fichier `firmware.bin` à la racine de la carte microSD (capacité max de 32Go, formatée en FAT32, taille d'unité d'allocation 4096).
+- Imprimante éteinte, insérez la carte microSD dans le port dédié sur la carte mère et allumez l'imprimante.
+- La procédure de flash démarre (sans rien afficher à l'écran) et dure quelques secondes.
+- Vérifiez le contenu de la carte microSD, le fichier `firmware.bin` a été renommé en `FIRMWARE.CUR` ce qui indique que le flash s'est bien déroulé.
+- Effectuez de nouveau un reset EEPROM (commande M502 suivi de la commande M500 ou via l'écran TFT).
+- Lancez un PID Buse & Plateau depuis les paramètres de l'écran.
+- Lancez une calibration de l'extrudeur depuis les paramètres de l'écran.
+- Lancez une calibration Delta depuis les menus de l'écran.
+- Lancez un auto-nivellement depuis les menus de l'écran.

@@ -59,7 +59,7 @@ Lire attentivement ceci pour [SKR 2.0 Rev. A et Rev. B](https://docs.google.com/
 
 ## Changements éventuels :
 
-Ce firmware est configuré pour une carte mère BigTreeTech SKR 2.0 rev B. Certains changements doivent être effectués si vous disposez d'une carte mère BigTreeTech SKR 2.0 rev A.
+Ce firmware est configuré pour une carte mère BigTreeTech SKR 2.0 Rev. B. Certains changements doivent être effectués si vous disposez d'une carte mère BigTreeTech SKR 2.0 Rev. A.
     
   - Si `SKR 2.0 Rev. A`, définissez ces valeurs :
     - Dans Configuration.h : `#define MOTHERBOARD BOARD_BTT_SKR_V2_0_REV_A`

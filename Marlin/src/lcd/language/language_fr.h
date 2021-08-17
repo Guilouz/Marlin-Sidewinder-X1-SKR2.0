@@ -91,7 +91,6 @@ namespace Language_fr {
   PROGMEM Language_Str MSG_HOME_OFFSET_K                   = _UxGT("Home Offset ") LCD_STR_K;
   PROGMEM Language_Str MSG_HOME_OFFSETS_APPLIED            = _UxGT("Décalages appliqués");
   PROGMEM Language_Str MSG_SET_ORIGIN                      = _UxGT("Régler origine");
-  PROGMEM Language_Str MSG_ASSISTED_TRAMMING               = _UxGT("Tramage assisté");
   PROGMEM Language_Str MSG_TRAMMING_WIZARD                 = _UxGT("Assistant de tramage");
   PROGMEM Language_Str MSG_SELECT_ORIGIN                   = _UxGT("Origine");
   PROGMEM Language_Str MSG_LAST_VALUE_SP                   = _UxGT("Dernière valeur ");
@@ -137,11 +136,11 @@ namespace Language_fr {
   PROGMEM Language_Str MSG_MOVE_AXIS                       = _UxGT("Déplacer un axe");
   PROGMEM Language_Str MSG_BED_LEVELING                    = _UxGT("Régler Niv. plateau");
   PROGMEM Language_Str MSG_LEVEL_BED                       = _UxGT("Niveau du plateau");
-  PROGMEM Language_Str MSG_LEVEL_CORNERS                   = _UxGT("Niveau des coins");
-  PROGMEM Language_Str MSG_LEVEL_CORNERS_RAISE             = _UxGT("Lever le plateau jusqu'à ce que la sonde soit déclenchée");
-  PROGMEM Language_Str MSG_LEVEL_CORNERS_IN_RANGE          = _UxGT("Coins dans la tolérance. Nivellement");
-  PROGMEM Language_Str MSG_LEVEL_CORNERS_GOOD_POINTS       = _UxGT("Points corrects: ");
-  PROGMEM Language_Str MSG_LEVEL_CORNERS_LAST_Z            = _UxGT("Dernier Z: ");
+  PROGMEM Language_Str MSG_BED_TRAMMING                    = _UxGT("Tramage du plateau");
+  PROGMEM Language_Str MSG_BED_TRAMMING_RAISE              = _UxGT("Lever le plateau jusqu'à ce que la sonde soit déclenchée");
+  PROGMEM Language_Str MSG_BED_TRAMMING_IN_RANGE           = _UxGT("Coins dans la tolérance. Nivellement");
+  PROGMEM Language_Str MSG_BED_TRAMMING_GOOD_POINTS        = _UxGT("Points corrects: ");
+  PROGMEM Language_Str MSG_BED_TRAMMING_LAST_Z             = _UxGT("Dernier Z: ");
   PROGMEM Language_Str MSG_NEXT_CORNER                     = _UxGT("Coin suivant");
   PROGMEM Language_Str MSG_MESH_EDITOR                     = _UxGT("Editeur Mesh");
   PROGMEM Language_Str MSG_EDIT_MESH                       = _UxGT("Editer Mesh");
@@ -725,6 +724,7 @@ namespace Language_fr {
   #endif
   PROGMEM Language_Str MSG_REHEAT                          = _UxGT("Réchauffer");
   PROGMEM Language_Str MSG_REHEATING                       = _UxGT("Réchauffe...");
+  PROGMEM Language_Str MSG_REHEATDONE                      = _UxGT("Réchauffe terminée");
 
   PROGMEM Language_Str MSG_PROBE_WIZARD                    = _UxGT("Assistant Sonde Z");
   PROGMEM Language_Str MSG_PROBE_WIZARD_PROBING            = _UxGT("Mesure référence");

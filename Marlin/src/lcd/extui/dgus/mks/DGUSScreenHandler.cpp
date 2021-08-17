@@ -624,25 +624,25 @@ void DGUSScreenHandler::ManualAssistLeveling(DGUS_VP_Variable &var, void *val_pt
 
   switch (point_value) {
     case 0x0001:
-      enqueue_corner_move(X_MIN_POS + abs(mks_corner_offsets[0].x),
-                          Y_MIN_POS + abs(mks_corner_offsets[0].y), level_speed);
+      enqueue_corner_move(X_MIN_POS + ABS(mks_corner_offsets[0].x),
+                          Y_MIN_POS + ABS(mks_corner_offsets[0].y), level_speed);
       queue.enqueue_now_P(PSTR("G28Z"));
       break;
     case 0x0002:
-      enqueue_corner_move(X_MAX_POS - abs(mks_corner_offsets[1].x),
-                          Y_MIN_POS + abs(mks_corner_offsets[1].y), level_speed);
+      enqueue_corner_move(X_MAX_POS - ABS(mks_corner_offsets[1].x),
+                          Y_MIN_POS + ABS(mks_corner_offsets[1].y), level_speed);
       break;
     case 0x0003:
-      enqueue_corner_move(X_MAX_POS - abs(mks_corner_offsets[2].x),
-                          Y_MAX_POS - abs(mks_corner_offsets[2].y), level_speed);
+      enqueue_corner_move(X_MAX_POS - ABS(mks_corner_offsets[2].x),
+                          Y_MAX_POS - ABS(mks_corner_offsets[2].y), level_speed);
       break;
     case 0x0004:
-      enqueue_corner_move(X_MIN_POS + abs(mks_corner_offsets[3].x),
-                          Y_MAX_POS - abs(mks_corner_offsets[3].y), level_speed);
+      enqueue_corner_move(X_MIN_POS + ABS(mks_corner_offsets[3].x),
+                          Y_MAX_POS - ABS(mks_corner_offsets[3].y), level_speed);
       break;
     case 0x0005:
-      enqueue_corner_move(abs(mks_corner_offsets[4].x),
-                          abs(mks_corner_offsets[4].y), level_speed);
+      enqueue_corner_move(ABS(mks_corner_offsets[4].x),
+                          ABS(mks_corner_offsets[4].y), level_speed);
       break;
   }
 
@@ -762,7 +762,7 @@ void DGUSScreenHandler::HandleManualMove(DGUS_VP_Variable &var, void *val_ptr) {
     return;
 
   char axiscode;
-  unsigned int speed = 1500; // FIXME: get default feedrate for manual moves, dont hardcode.
+  unsigned int speed = 1500; // FIXME: get default feedrate for manual moves, don't hardcode.
 
   switch (var.VP) { // switch X Y Z or Home
     default: return;
@@ -1495,17 +1495,17 @@ void DGUSScreenHandler::DGUS_Runout_Idle(void) {
         break;
 
       case UNRUNOUT_STATUS:
-        if (READ(MT_DET_1_PIN) == LOW)
+        if (READ(MT_DET_1_PIN) == MT_DET_PIN_STATE)
           runout_mks.runout_status = RUNOUT_STATUS;
         break;
 
       case RUNOUT_BEGIN_STATUS:
-        if (READ(MT_DET_1_PIN) == HIGH)
+        if (READ(MT_DET_1_PIN) != MT_DET_PIN_STATE)
           runout_mks.runout_status = RUNOUT_WAITTING_STATUS;
         break;
 
       case RUNOUT_WAITTING_STATUS:
-        if (READ(MT_DET_1_PIN) == LOW)
+        if (READ(MT_DET_1_PIN) == MT_DET_PIN_STATE)
           runout_mks.runout_status = RUNOUT_BEGIN_STATUS;
         break;
 

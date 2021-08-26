@@ -21,6 +21,10 @@ Le firmware pour carte mère BigTreeTech SKR 1.4 Turbo est disponible [ici](http
 
 Lire attentivement ceci pour [SKR 2.0 Rev. A et Rev. B](https://docs.google.com/document/d/1IeKgfE2WIDjqH1fx5Yg7n1FOHVwhDFmDlZ-7QMlOEV0/edit?fbclid=IwAR3gCoyRlxSNaZfyHNV_BgGn1apJKmvagmzduOfGGYjY7I8kDBUVAuLyIi4).
 
+## Schema de câblage :
+
+![Sidewinder X1 SKR2](https://user-images.githubusercontent.com/12702322/131006518-100e18dd-2e8a-4744-8004-b7228acdadc0.png)
+
 ## Principales fonctionnalités configurées :
 
 - Support carte mère BigTreeTech SKR 2.0 Rev. B

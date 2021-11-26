@@ -2212,6 +2212,8 @@ uint32_t Stepper::block_phase_isr() {
           #define Y_CMP(A,B) ((A)!=(B))
         #endif
         #define Y_MOVE_TEST ( S_(1) != S_(2) || (S_(1) > 0 && Y_CMP(D_(1),D_(2))) )
+      #elif ENABLED(MARKFORGED_YX)
+        #define Y_MOVE_TEST (current_block->steps.a != current_block->steps.b)
       #else
         #define Y_MOVE_TEST !!current_block->steps.b
       #endif
@@ -2614,7 +2616,7 @@ void Stepper::init() {
   #if HAS_X_ENABLE
     X_ENABLE_INIT();
     if (!X_ENABLE_ON) X_ENABLE_WRITE(HIGH);
-    #if EITHER(DUAL_X_CARRIAGE, X_DUAL_STEPPER_DRIVERS) && HAS_X2_ENABLE
+    #if BOTH(HAS_X2_STEPPER, HAS_X2_ENABLE)
       X2_ENABLE_INIT();
       if (!X_ENABLE_ON) X2_ENABLE_WRITE(HIGH);
     #endif
@@ -2744,7 +2746,7 @@ void Stepper::init() {
   #if E_STEPPERS && HAS_E0_STEP
     E_AXIS_INIT(0);
   #endif
-  #if E_STEPPERS > 1 && HAS_E1_STEP
+  #if (E_STEPPERS > 1 || ENABLED(E_DUAL_STEPPER_DRIVERS)) && HAS_E1_STEP
     E_AXIS_INIT(1);
   #endif
   #if E_STEPPERS > 2 && HAS_E2_STEP
@@ -2800,7 +2802,7 @@ void Stepper::init() {
  * derive the current XYZE position later on.
  */
 void Stepper::_set_position(const abce_long_t &spos) {
-  #if EITHER(IS_CORE, MARKFORGED_XY)
+  #if ANY(IS_CORE, MARKFORGED_XY, MARKFORGED_YX)
     #if CORE_IS_XY
       // corexy positioning
       // these equations follow the form of the dA and dB equations on https://www.corexy.com/theory.html
@@ -2813,6 +2815,8 @@ void Stepper::_set_position(const abce_long_t &spos) {
       count_position.set(spos.a, spos.b + spos.c, CORESIGN(spos.b - spos.c));
     #elif ENABLED(MARKFORGED_XY)
       count_position.set(spos.a - spos.b, spos.b, spos.c);
+    #elif ENABLED(MARKFORGED_YX)
+      count_position.set(spos.a, spos.b - spos.a, spos.c);
     #endif
     TERN_(HAS_EXTRUDERS, count_position.e = spos.e);
   #else
@@ -2884,6 +2888,10 @@ void Stepper::endstop_triggered(const AxisEnum axis) {
       axis == CORE_AXIS_1
         ? count_position[CORE_AXIS_1] - count_position[CORE_AXIS_2]
         : count_position[CORE_AXIS_2]
+    #elif ENABLED(MARKFORGED_YX)
+      axis == CORE_AXIS_1
+        ? count_position[CORE_AXIS_1]
+        : count_position[CORE_AXIS_2] - count_position[CORE_AXIS_1]
     #else // !IS_CORE
       count_position[axis]
     #endif
@@ -2912,10 +2920,10 @@ int32_t Stepper::triggered_position(const AxisEnum axis) {
   return v;
 }
 
-#if ANY(CORE_IS_XY, CORE_IS_XZ, MARKFORGED_XY, IS_SCARA, DELTA)
+#if ANY(CORE_IS_XY, CORE_IS_XZ, MARKFORGED_XY, MARKFORGED_YX, IS_SCARA, DELTA)
   #define SAYS_A 1
 #endif
-#if ANY(CORE_IS_XY, CORE_IS_YZ, MARKFORGED_XY, IS_SCARA, DELTA)
+#if ANY(CORE_IS_XY, CORE_IS_YZ, MARKFORGED_XY, MARKFORGED_YX, IS_SCARA, DELTA)
   #define SAYS_B 1
 #endif
 #if ANY(CORE_IS_XZ, CORE_IS_YZ, DELTA)
@@ -3253,7 +3261,7 @@ void Stepper::report_positions() {
 
       #elif HAS_MOTOR_CURRENT_PWM
 
-        #define _WRITE_CURRENT_PWM(P) analogWrite(pin_t(MOTOR_CURRENT_PWM_## P ##_PIN), 255L * current / (MOTOR_CURRENT_PWM_RANGE))
+        #define _WRITE_CURRENT_PWM(P) set_pwm_duty(pin_t(MOTOR_CURRENT_PWM_## P ##_PIN), 255L * current / (MOTOR_CURRENT_PWM_RANGE))
         switch (driver) {
           case 0:
             #if PIN_EXISTS(MOTOR_CURRENT_PWM_X)

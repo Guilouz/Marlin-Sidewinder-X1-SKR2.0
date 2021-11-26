@@ -23,11 +23,20 @@
 
 #include "../../inc/MarlinConfigPre.h"
 
-#if NEEDS_HARDWARE_PWM
-
 #include <pwm.h>
 #include "HAL.h"
 #include "timers.h"
+
+void set_pwm_duty(const pin_t pin, const uint16_t v, const uint16_t v_size/*=255*/, const bool invert/*=false*/) {
+  if (!PWM_PIN(pin)) return;
+  timer_dev *timer = PIN_MAP[pin].timer_device;
+  if (!(timer->regs.bas->SR & TIMER_CR1_CEN))   // Ensure the timer is enabled
+    set_pwm_frequency(pin, PWM_FREQUENCY);
+  uint16_t max_val = timer->regs.bas->ARR * v / v_size;
+  if (invert) max_val = v_size - max_val;
+  pwmWrite(pin, max_val);
+
+}
 
 void set_pwm_frequency(const pin_t pin, int f_desired) {
   if (!PWM_PIN(pin)) return;                    // Don't proceed if no hardware timer
@@ -57,12 +66,4 @@ void set_pwm_frequency(const pin_t pin, int f_desired) {
   timer_set_prescaler(timer, prescaler);
 }
 
-void set_pwm_duty(const pin_t pin, const uint16_t v, const uint16_t v_size/*=255*/, const bool invert/*=false*/) {
-  timer_dev *timer = PIN_MAP[pin].timer_device;
-  uint16_t max_val = timer->regs.bas->ARR * v / v_size;
-  if (invert) max_val = v_size - max_val;
-  pwmWrite(pin, max_val);
-}
-
-#endif // NEEDS_HARDWARE_PWM
 #endif // __STM32F1__

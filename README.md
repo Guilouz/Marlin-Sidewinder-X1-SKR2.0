@@ -7,7 +7,7 @@ Si vous aimez mon travail, n'hésitez pas à me soutenir en me payant une 🍺 o
 
 <br /><br /><br /><br /><br /><br /><br /><br />
 
-**Firmware Marlin 2.0.9.1 bugfix configuré pour Artillery Sidewinder X1 avec carte mère BigTreeTech SRK 2.0 Rev. B.**
+**Firmware configuré pour Artillery Sidewinder X1 avec carte mère BigTreeTech SRK 2.0 Rev. B.**
 
 Le firmware pour écran BigTreeTech TFT43 3.0 est disponible [ici](https://github.com/Guilouz/BTT-TFT43-Sidewinder-X1).
 
@@ -32,6 +32,9 @@ EDIT 06/12/2021 : En raison de la pénurie de composants, BigTreeTech utilise d�
 ## Schema de câblage :
 
 ![Sidewinder X1 SKR2](https://user-images.githubusercontent.com/12702322/131006518-100e18dd-2e8a-4744-8004-b7228acdadc0.png)
+
+![Capture d’écran 2021-12-08 à 00 44 42](https://user-images.githubusercontent.com/12702322/145123306-7c05586d-4bce-4032-9f6a-ef15c015cfec.jpg)
+
 
 ## Principales fonctionnalités configurées :
 

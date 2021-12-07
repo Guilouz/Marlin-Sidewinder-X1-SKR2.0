@@ -38,7 +38,7 @@ EDIT 06/12/2021 : En raison de la pénurie de composants, BigTreeTech utilise d�
 
 ## Principales fonctionnalités configurées :
 
-- Support carte mère BigTreeTech SKR 2.0 Rev. B
+- Support carte mère BigTreeTech SKR 2.0
 - Support drivers TMC2209/TMC2226 UART
 - Support écrans BigTreeTech
 - Support Bed Leveling Bilinear 5 x 5 points

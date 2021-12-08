@@ -73,10 +73,13 @@ EDIT 06/12/2021 : En raison de la pénurie de composants, BigTreeTech utilise d�
 
 ## Changements éventuels :
 
-Ce firmware est configuré pour une carte mère BigTreeTech SKR 2.0 Rev. B. Certains changements doivent être effectués si vous disposez d'une carte mère BigTreeTech SKR 2.0 Rev. A.
+Ce firmware est configuré pour une carte mère BigTreeTech SKR 2.0 Rev. B avec MCU STM32F407VGT6. Certains changements peuvent être effectués si vous disposez d'une autre version de la carte mère.
     
   - Si `SKR 2.0 Rev. A`, définissez ces valeurs :
     - Dans Configuration.h : `#define MOTHERBOARD BOARD_BTT_SKR_V2_0_REV_A`
     - Dans Configuration_adv.h : `#define DISABLE_DRIVER_SAFE_POWER_PROTECT` en vous assurant d'avoir vérifier ceci : [SKR 2.0 Rev. A et Rev. B](https://docs.google.com/document/d/1IeKgfE2WIDjqH1fx5Yg7n1FOHVwhDFmDlZ-7QMlOEV0/edit?fbclid=IwAR3gCoyRlxSNaZfyHNV_BgGn1apJKmvagmzduOfGGYjY7I8kDBUVAuLyIi4).
+
+  - Si `SKR 2.0 avec MCU STM32F429VGT6`, définissez ces valeurs :
+    - Dans platformio.ini : `default_envs = BIGTREE_SKR_2_F429`
   
 Recompilez ensuite le firmware à l'aide de VSCode et PlatformIO (voir [ici](https://marlinfw.org/docs/basics/install_platformio_vscode.html)).

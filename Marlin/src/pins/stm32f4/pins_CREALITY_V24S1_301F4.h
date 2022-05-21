@@ -1,6 +1,6 @@
 /**
  * Marlin 3D Printer Firmware
- * Copyright (c) 2020 MarlinFirmware [https://github.com/MarlinFirmware/Marlin]
+ * Copyright (c) 2022 MarlinFirmware [https://github.com/MarlinFirmware/Marlin]
  *
  * Based on Sprinter and grbl.
  * Copyright (c) 2011 Camiel Gubbels / Erik van der Zalm
@@ -19,34 +19,20 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  *
  */
+#pragma once
 
-#include "../platforms.h"
+/**
+ * Creality V24S1_301F4 (STM32F401RC) board pin assignments as found on Ender 3 S1.
+ */
 
-#ifdef HAL_STM32
+#ifndef BOARD_INFO_NAME
+  #define BOARD_INFO_NAME "Creality V24S1-301F4"
+#endif
+#ifndef DEFAULT_MACHINE_NAME
+  #define DEFAULT_MACHINE_NAME "Ender-3 S1 F4"
+#endif
 
-#include "../../inc/MarlinConfigPre.h"
+#define DISABLE_DEBUG false // DISABLE_(DEBUG|JTAG) is not supported for STM32F4.
+#define ALLOW_STM32F4
 
-#if ENABLED(USE_WATCHDOG)
-
-#define WDT_TIMEOUT_US TERN(WATCHDOG_DURATION_8S, 8000000, 4000000) // 4 or 8 second timeout
-
-#include "../../inc/MarlinConfig.h"
-
-#include "watchdog.h"
-#include <IWatchdog.h>
-
-void watchdog_init() {
-  #if DISABLED(DISABLE_WATCHDOG_INIT)
-    IWatchdog.begin(WDT_TIMEOUT_US);
-  #endif
-}
-
-void HAL_watchdog_refresh() {
-  IWatchdog.reload();
-  #if DISABLED(PINS_DEBUGGING) && PIN_EXISTS(LED)
-    TOGGLE(LED_PIN);  // heartbeat indicator
-  #endif
-}
-
-#endif // USE_WATCHDOG
-#endif // HAL_STM32
+#include "../stm32f1/pins_CREALITY_V24S1_301.h"

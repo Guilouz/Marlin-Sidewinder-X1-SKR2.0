@@ -26,7 +26,7 @@
 
 #if ENABLED(POSTMORTEM_DEBUGGING)
 
-#include "../shared/HAL_MinSerial.h"
+#include "../shared/MinSerial.h"
 #include <debug_frmwrk.h>
 
 static void TX(char c) { _DBC(c); }

@@ -1,6 +1,6 @@
 /**
  * Marlin 3D Printer Firmware
- * Copyright (c) 2020 MarlinFirmware [https://github.com/MarlinFirmware/Marlin]
+ * Copyright (c) 2021 MarlinFirmware [https://github.com/MarlinFirmware/Marlin]
  *
  * Based on Sprinter and grbl.
  * Copyright (c) 2011 Camiel Gubbels / Erik van der Zalm
@@ -19,12 +19,15 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  *
  */
-#pragma once
+#include "MinSerial.h"
 
-/**
- * HAL Watchdog for Teensy 4.0 (IMXRT1062DVL6A) / 4.1 (IMXRT1062DVJ6A)
- */
+#if ENABLED(POSTMORTEM_DEBUGGING)
 
-void watchdog_init();
+void HAL_min_serial_init_default() {}
+void HAL_min_serial_out_default(char ch) { SERIAL_CHAR(ch); }
+void (*HAL_min_serial_init)() = &HAL_min_serial_init_default;
+void (*HAL_min_serial_out)(char) = &HAL_min_serial_out_default;
 
-void HAL_watchdog_refresh();
+bool MinSerial::force_using_default_output = false;
+
+#endif

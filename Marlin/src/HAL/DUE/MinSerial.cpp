@@ -25,7 +25,7 @@
 
 #if ENABLED(POSTMORTEM_DEBUGGING)
 
-#include "../shared/HAL_MinSerial.h"
+#include "../shared/MinSerial.h"
 
 #include <stdarg.h>
 

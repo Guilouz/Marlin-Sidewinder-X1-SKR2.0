@@ -54,6 +54,7 @@ default_envs = BIGTREE_SKR_2_F429
 - Support drivers TMC2209/TMC2226 UART
 - Support écrans BigTreeTech
 - Support Bed Leveling Bilinear 5 x 5 points
+- Support Bilinear Subdivision
 - Support BLTouch (High Speed Mode)
 - Support M600 & Nozzle Park / Advanced Pause
 - Support Babystepping
@@ -62,6 +63,7 @@ default_envs = BIGTREE_SKR_2_F429
 - Support PID Buse & Plateau
 - Support protection thermique contre l'emballement
 - Support S-Curve Acceleration & Junction Deviation
+- Support Firmware Auto Retract
 - Support G34 - Z Steppers Auto-Alignment
 - Support G26 - Mesh Validation Pattern
 - Support du transfert de fichier binaire (transfert du fichier firmware à distance via Octoprint)
